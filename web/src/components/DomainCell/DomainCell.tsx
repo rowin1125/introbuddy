@@ -4,11 +4,12 @@ import DomainDisplay from '../DomainDisplay/DomainDisplay'
 
 export const QUERY = gql`
   query FindDomainQuery($id: String!) {
-    domain: domain(id: $id) {
+    domain(id: $id) {
       id
       name
       description
       createdAt
+      userId
     }
   }
 `

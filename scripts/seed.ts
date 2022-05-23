@@ -9,12 +9,21 @@ export default async () => {
           description:
             'Domain 1 lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. ',
           createdAt: new Date(),
+          userId: '1',
         },
         {
           name: 'Domain 2',
           description:
             'Domain 2 lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. ',
           createdAt: new Date(),
+          userId: '2',
+        },
+        {
+          name: 'Domain 3',
+          description:
+            'Domain 3 lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. ',
+          createdAt: new Date(),
+          userId: '1',
         },
       ],
     })

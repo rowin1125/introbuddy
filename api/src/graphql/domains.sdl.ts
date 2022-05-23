@@ -2,13 +2,14 @@ export const schema = gql`
   type Domain {
     id: String!
     name: String!
+    userId: String!
     description: String!
     createdAt: DateTime!
   }
 
   type Query {
-    domains: [Domain!]! @requireAuth
-    domain(id: String!): Domain @requireAuth
+    domains: [Domain!]! @skipAuth
+    domain(id: String!): Domain @skipAuth
   }
 
   input CreateDomainInput {

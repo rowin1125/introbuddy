@@ -10,6 +10,7 @@ generator client {
 
 model Domain {
   id   String @id @default(uuid())
+  userId String
   name String
   description String
   createdAt DateTime @default(now())

@@ -2,18 +2,27 @@ import { db } from 'src/lib/db'
 import type { QueryResolvers, MutationResolvers } from 'types/graphql'
 
 export const domains: QueryResolvers['domains'] = () => {
-  return db.domain.findMany()
+  return db.domain.findMany({
+    where: {
+      userId: context.currentUser?.sub,
+    },
+  })
 }
 
 export const domain: QueryResolvers['domain'] = ({ id }) => {
-  return db.domain.findUnique({
-    where: { id },
+  return db.domain.findFirst({
+    where: {
+      id,
+    },
   })
 }
 
 export const createDomain: MutationResolvers['createDomain'] = ({ input }) => {
   return db.domain.create({
-    data: input,
+    data: {
+      ...input,
+      userId: context.currentUser.sub,
+    },
   })
 }
 

@@ -12,15 +12,18 @@ const CREATE_DOMAIN_MUTATION = gql`
 `
 
 const NewDomain = () => {
-  const [createDomain, { loading, error }] = useMutation(CREATE_DOMAIN_MUTATION, {
-    onCompleted: () => {
-      toast.success('Domain created')
-      navigate(routes.domains())
-    },
-    onError: (error) => {
-      toast.error(error.message)
-    },
-  })
+  const [createDomain, { loading, error }] = useMutation(
+    CREATE_DOMAIN_MUTATION,
+    {
+      onCompleted: () => {
+        toast.success('Domain created')
+        navigate(routes.domains())
+      },
+      onError: (error) => {
+        toast.error(error.message)
+      },
+    }
+  )
 
   const onSave = (input) => {
     createDomain({ variables: { input } })
